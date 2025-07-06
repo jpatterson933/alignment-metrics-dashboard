@@ -17,13 +17,8 @@ import express from "express";
 // import { handleErrors } from "./middleware/error";
 // import { authMiddleware, mcpMiddleware } from "./middleware/auth";
 
-// // routes setup
-// import qtiAssessmentTestRoutes from "./routes/qti-assessment-test.routes";
-// import qtiAssessmentItemRoutes from "./routes/qti-assessment-item.routes";
-// import qtiStimulusRoutes from "./routes/qti-stimulus.routes";
-
-// // docs
-// import { docsRoutes } from "./routes/docs";
+// routes setup
+import managementRoutes from "./routes/management";
 
 const app = express();
 // app.use(compression());
@@ -46,11 +41,7 @@ app.get("/", (req, res) => {
 });
 
 // Routes
-// app.use("/api/assessment-tests", qtiAssessmentTestRoutes);
-// app.use("/api/assessment-items", qtiAssessmentItemRoutes);
-// app.use("/api/stimuli", qtiStimulusRoutes);
-
-// app.use(docsRoutes);
+app.use("/api/v1", managementRoutes);
 
 // Sentry should be setup after routes and before other error middlewares
 if (config.SENTRY_ENABLED) {

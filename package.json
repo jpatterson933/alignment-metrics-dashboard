@@ -1,0 +1,28 @@
+{
+  "name": "alignment-metrics-dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "20"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^24.0.10",
+    "tsx": "^4.20.3"
+  },
+  "dependencies": {
+    "@sentry/node": "^9.35.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.0.1",
+    "express": "^5.1.0",
+    "mongoose": "^8.16.1"
+  }
+}

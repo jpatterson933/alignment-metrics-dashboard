@@ -1,5 +1,5 @@
 import Anthropic from '@anthropic-ai/sdk';
-import { BenchmarkService } from '../management/service';
+import { BenchmarkService } from '../benchmark/service';
 import { BenchmarkTestResult, PromptTestResult } from './schema';
 
 export class TestService {

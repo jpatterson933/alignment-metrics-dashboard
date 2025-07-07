@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import { BenchmarkController } from '../modules/management/controller';
+import { BenchmarkController } from '../modules/benchmark/controller';
 import type { RouteRegistryProvider } from "../docs/registry";
-import { benchmarkResponseSchema, createBenchmarkSchema, updateBenchmarkSchema } from '@/modules/management/schema';
+import { benchmarkResponseSchema, createBenchmarkSchema, updateBenchmarkSchema } from '@/modules/benchmark/schema';
 import { TAGS } from '@/docs/tags';
 
 const router = Router();

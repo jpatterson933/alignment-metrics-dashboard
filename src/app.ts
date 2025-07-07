@@ -1,5 +1,6 @@
 import * as Sentry from "@sentry/node";
 import { config } from "./common/config";
+import { ErrorHandler } from "./middleware/error";
 
 Sentry.init({
   // dsn: config.SENTRY_DSN,
@@ -14,11 +15,12 @@ Sentry.init({
 import cors from "cors";
 import express from "express";
 // import { logRequest } from "./middleware/log";
-// import { handleErrors } from "./middleware/error";
+
 // import { authMiddleware, mcpMiddleware } from "./middleware/auth";
 
 // routes setup
 import managementRoutes from "./routes/management";
+import { docsRoutes } from "./routes/docs";
 
 const app = express();
 // app.use(compression());
@@ -42,6 +44,7 @@ app.get("/", (req, res) => {
 
 // Routes
 app.use("/api/v1", managementRoutes);
+app.use("/", docsRoutes);
 
 // Sentry should be setup after routes and before other error middlewares
 if (config.SENTRY_ENABLED) {
@@ -49,6 +52,6 @@ if (config.SENTRY_ENABLED) {
   Sentry.setupExpressErrorHandler(app);
 }
 
-// app.use(handleErrors);
+app.use(ErrorHandler.handle);
 
 export { app };

@@ -25,6 +25,7 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.56.0",
     "@scalar/express-api-reference": "^0.8.7",
     "@sentry/node": "^9.35.0",
     "cors": "^2.8.5",

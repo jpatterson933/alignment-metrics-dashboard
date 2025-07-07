@@ -20,6 +20,7 @@ import express from "express";
 
 // routes setup
 import managementRoutes from "./routes/management";
+import testRoutes from "./routes/tests";
 import { docsRoutes } from "./routes/docs";
 
 const app = express();
@@ -44,6 +45,7 @@ app.get("/", (req, res) => {
 
 // Routes
 app.use("/api/v1", managementRoutes);
+app.use("/api/v1", testRoutes);
 app.use("/", docsRoutes);
 
 // Sentry should be setup after routes and before other error middlewares

@@ -26,14 +26,14 @@ export function getDocument(registry: { paths: any }) {
   return createDocument({
     openapi: "3.1.0",
     info: {
-      title: "QTI API",
+      title: "Alignment Metrics API",
       version: "1.0.0",
       description:
-        "A robust assessment engine implementing the QTI 3.0 specification, designed for creating, managing, and delivering educational assessments.",
+        "A robust API for managing alignment metrics.",
     },
     servers: [
       {
-        url: process.env.API_BASE_URL || "http://localhost:3000/api",
+        url: `${process.env.API_BASE_URL}/api/v1` || "http://localhost:3000/api/v1",
         description: "Main Server",
       },
     ],
